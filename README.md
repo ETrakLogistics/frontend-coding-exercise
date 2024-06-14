@@ -21,7 +21,10 @@ You can run the tests using the following command:
 
 ```bash
 # Run the tests
-npm run test
+npm test
+
+# Run the tests in watch mode
+npm run test-watch
 ```
 
 ## Project Structure
