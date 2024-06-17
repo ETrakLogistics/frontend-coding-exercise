@@ -2,12 +2,13 @@ import { useState } from "react"
 import Button from "./Button";
 
 export default function App() {
-  const [count, setCount] = useState(0);
+  const [parcelCount, setParcelCount] = useState(0);
 
   return (
     <div>
-      <h1>Frontend Coding Exercise</h1>
-      <Button onClick={() => setCount(count + 1)}>Count is {count}</Button>
+      <h1>Star Wars Delivery Service</h1>
+      <Button onClick={() => setParcelCount(parcelCount + 1)}>Add parcel to Delivery Spaceship</Button>
+      <p>Delivery Spaceship has {parcelCount} parcels</p>
     </div>
   )
 }
