@@ -5,18 +5,20 @@ import userEvent from '@testing-library/user-event';
 describe('App', () => {
     test('Renders', () => {
         const {getByText} = render(<App />)
-        expect(getByText("Frontend Coding Exercise")).toBeInTheDocument()
+        expect(getByText("Star Wars Delivery Service")).toBeInTheDocument()
     })
 
     test('Displays a count button', async () => {
-        const {getByRole} = render(<App />)
+        const {getByRole, getByText} = render(<App />)
 
         const button = getByRole("button");
 
-        expect(button).toHaveTextContent("Count is 0")
+        expect(button).toHaveTextContent("Add parcel to Delivery Spaceship")
+
+        expect(getByText("Delivery Spaceship has 0 parcels")).toBeInTheDocument()
 
         await userEvent.click(button);
 
-        expect(button).toHaveTextContent("Count is 1")
+        expect(getByText("Delivery Spaceship has 1 parcels")).toBeInTheDocument()
     });
 });
